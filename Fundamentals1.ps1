@@ -50,3 +50,22 @@ Get-Help Get-Process
 
 # Find information about the alias cls
 Get-Command cls -CommandType Alias
+
+##############
+# Get-Member #
+##############
+
+# Start off by seeing what would be returned with a Get-Member
+Get-Command | Get-Member
+
+# Enclose a command in parenthesis to "run" the command
+# Basically stores command in temp variable
+
+# Use a property to find the command type
+(Get-Command -Name Get-Help).CommandType
+
+# Use a property to find what module gives me this command
+(Get-Command -Name Get-Help).ModuleName
+
+# Use a method
+(Get-Command).GetType()
